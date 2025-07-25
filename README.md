@@ -1,6 +1,6 @@
-# 🚀 DSAZone
+# 🚀 dsa-zone
 
-Welcome to **DSAZone** — your ultimate playground for Data Structures & Algorithms! 🧠⚡ Dive into a world of code, challenges, and clean solutions to level up your DSA skills.
+Welcome to **dsa-zone** — your ultimate playground for Data Structures & Algorithms! 🧠⚡ Dive into a world of code, challenges, and clean solutions to level up your DSA skills.
 
 ---
 
