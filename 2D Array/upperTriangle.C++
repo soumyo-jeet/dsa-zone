@@ -16,30 +16,48 @@ using namespace std;
 
 int main()
 {
-    int n, m, arr[100][100];
+    int n, m;
+    float arr[100][100];
     cout << "Enter no of rows: ";
     cin >> n;
     cout << "Enter no of cols: ";
     cin >> m;
 
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < m; j++) {
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
             cin >> arr[i][j];
         }
     }
 
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < m; j++) {
-            if(i > j) {
-                arr[i][j] = 0;
-            }
+    // 
+
+    int k = 0;
+    for (int i = 0; i < n - 1; i++)
+    {
+        int piv = arr[i][k];
+        for (int j = k; j < m; j++)
+        {
+            arr[i][j] = arr[i][j] / piv;
         }
+
+        for (int r = i + 1; r < n; r++)
+        {
+            for (int j = k; j < m; j++)
+            {
+                arr[r][j] -= arr[i][j] * arr[r][k];
+            }
+        }  
+
+        k++;
     }
 
-
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < m; j++) {
-            cout << arr[i][j] << ' ';
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            printf("%.2f ", arr[i][j]);
         }
         cout << endl;
     }
