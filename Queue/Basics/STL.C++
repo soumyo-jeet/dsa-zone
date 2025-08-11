@@ -14,16 +14,35 @@
 #include <queue>
 using namespace std;
 
-void queueInRev (queue <int> q) 
+void queueInRevWithRec (queue <int> q) 
 {
     if(q.empty()) return;
 
     int x = q.front();
     q.pop();
-    queueInRev(q);
+    queueInRevWithRec(q);
     cout << x << " ";
     return;
 }
+
+void queueInRevWithStack (queue <int> q) 
+{
+    stack <int> temp;
+
+    while(!q.empty())
+    {
+        temp.push(q.front());
+        q.pop();
+    }
+
+    while(!temp.empty())
+    {
+        cout << temp.top() << " ";
+        temp.pop();
+    }
+}
+
+
 
 void queueInAct (queue <int> q)
 {
@@ -51,5 +70,7 @@ int main()
 
     //queue in rev order
     cout << endl << "In reverse order: " << endl;
-    queueInRev(q);
+    queueInRevWithRec(q);
+    cout << endl;
+    queueInRevWithStack(q);
 }
