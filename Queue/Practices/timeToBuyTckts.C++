@@ -34,6 +34,8 @@ int timeRequiredToBuy(vector<int> &tickets, int k)
         q.pop();
         time++;
     }
+
+    return time;
 }
 
 
