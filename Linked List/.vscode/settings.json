@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "circularLL.C": "cpp",
+        "josephusProblem.C": "cpp",
+        "doublyLL.C": "cpp",
+        "polynomialAdd.C": "cpp"
+    }
+}
