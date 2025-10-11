@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool evaluateTree(TreeNode* root) {
+    /* bool evaluateTree(TreeNode* root) {
         if(root == NULL) return 0;
         if(root->left == NULL && root->right == NULL) return root->val;
 
@@ -11,7 +11,7 @@ public:
         else root->val = root->left->val && root->right->val;
 
         return root->val;
-    }
+    } */
 };
 
 

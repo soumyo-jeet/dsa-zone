@@ -20,8 +20,6 @@ int largestRectangleArea(vector<int> &heights)
             int w;
             if (temp.empty())
                 w = i;
-            else if (temp.top() >= h)
-                w = i - th - 1;
             else
                 w = i - temp.top() - 1;
 
@@ -38,9 +36,7 @@ int largestRectangleArea(vector<int> &heights)
         // nsl finding
         int w;
         if (temp.empty())
-            w = heights.size() - th;
-        else if (temp.top() >= h)
-           w = heights.size() - th -1;
+            w = heights.size();
         else
             w = heights.size() - temp.top() -1;
 

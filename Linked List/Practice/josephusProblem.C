@@ -85,7 +85,7 @@ node *safestPlace (node *head, int k, int n)
     return curr;
 }
 
-void *display(node *head)
+void display(node *head)
 {
     if(head == nullptr) 
         printf("\nLL is vacent");
@@ -112,8 +112,7 @@ int main()
     node *head = (node *)malloc(sizeof(node));
     head->val = 1;
     head->next = createCircularLL(head, 2, n);
-    printf("\nHead: %d", head->val);
-    display(head);
+    
     int win = safestPlace(head, k, n)->val;
-    printf("Hence the safest place in the game is: %d", win);
+    printf("\nHence the safest place in the game is: %d", win);
 }
