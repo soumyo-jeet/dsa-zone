@@ -1,29 +1,38 @@
 #include <iostream>
 #include <stack>
 #include <vector>
+#include <algorithm>
 using namespace std;
+
+
 
 int maxWater (vector<int> arr)
 {
-    stack<int> temp; int max = 0;
+    // find max height in right and left => if both exist then only water can be stored above that house
+    // amount of water => (min(mR, mL) - curr H) * 1 
+    stack<int> temp; int sum = 0;
     for(int i = 0; i < arr.size(); i++)
     {
-        while(!temp.empty() && temp.top() < arr[i])
+        while(!temp.empty() && arr[temp.top()] < arr[i])
         {
             int h = temp.top();
             temp.pop();
 
             int w;
-            if(temp.empty() || temp.top() == h) w = i - h -1;
-            else w = i - temp.top() - 1;
-
-            max = max < h * w ? h * w : max;
+            if(temp.empty()) w = 0;
+            else
+            {
+                int minH = min(arr[temp.top()], arr[i]);
+                int wid = i - temp.top() - 1;
+                w = (minH - arr[h]) * wid;
+            }
+            sum += w;
         }
 
-        temp.push(arr[i]);
+        temp.push(i);
     }
 
-    return max;
+    return sum;
 }
 
 int main ()

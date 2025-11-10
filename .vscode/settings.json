@@ -1,6 +1,10 @@
 {
     "files.associations": {
         "prim'sAlgo.C": "cpp",
-        "kruskal'sAlgo.C": "cpp"
+        "kruskal'sAlgo.C": "cpp",
+        "insertionSort.C": "cpp",
+        "mergeSort.C": "cpp",
+        "linearProbing.C": "cpp",
+        "doublyLL.C": "cpp"
     }
 }

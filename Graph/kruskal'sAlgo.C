@@ -144,7 +144,9 @@ void kruskalAlgo(edgeDiary *ed, int e, int v)
         int pv = getParent(v, parent);
 
 
-        // same parent => both belongs to same set => they are already connected => further edge will make a cycle
+        // same parent => both belongs to same set 
+        // => they are already connected 
+        // => further edge will make a cycle
         if(pu != pv)
         {
             unionByRank(u, v, pu, pv, rank, parent);

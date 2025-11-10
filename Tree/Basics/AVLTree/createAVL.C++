@@ -137,8 +137,8 @@ Node *insert(int x, Node *root)
     // left-right
     else if(bal > 1 && x > root->left->val)
     {
-        // right rotation of the middle
-        root->left = rightRotation(root->left);
+        // left rotation of the middle
+        root->left = leftRotation(root->left);
         // tree has become l-l, do right rotation on the top now 
         return rightRotation(root);
     }
@@ -146,8 +146,8 @@ Node *insert(int x, Node *root)
     // right-left
     else if(bal < -1 && x < root->right->val)
     {
-        // left rotate the middle
-        root->right = leftRotation(root->right);
+        // right rotate the middle
+        root->right = rightRotation(root->right);
         // tree has become r-r, do left rotate on the top now
         return leftRotation(root);
     }

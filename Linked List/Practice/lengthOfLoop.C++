@@ -103,7 +103,7 @@ void *display (Node *head)
 
 int lenOfLoop(Node *head)
 {
-    Node *slwptr = head, *fastptr = head->next;
+    Node *slwptr = head, *fastptr = head;
 
     while(fastptr != nullptr && fastptr->next != nullptr)
     {
