@@ -1,13 +1,13 @@
 #include<stdio.h>
 #include<stdlib.h>
-
+int inv;
 void merge (int * arr, int s, int m, int e)
 {
     int tempArr[e + 1];
     int l = s, r = m + 1, i = 0;
     while(l <= m && r <= e)
     {
-        if(arr[l] < arr[r])
+        if(arr[l] <= arr[r])
         {
             tempArr[i++] = arr[l];
             l++;
@@ -16,13 +16,8 @@ void merge (int * arr, int s, int m, int e)
         else if(arr[l] > arr[r])
         {
             tempArr[i++] = arr[r];
-            r++;
-        }
-
-        else
-        {
-            tempArr[i++] = arr[l];
-            l++; r++;
+            r++; 
+            inv += (m - l + 1) ; // all the hops required
         }
     }
 
@@ -48,7 +43,7 @@ void merge (int * arr, int s, int m, int e)
 
 void mergeSort(int *arr, int s, int e)
 {
-    if(s > e) return;
+    if(s >= e) return;
     int mid = s + (e - s) / 2;
     
     mergeSort(arr, s, mid);
@@ -60,6 +55,7 @@ void mergeSort(int *arr, int s, int e)
 int main ()
 {
     int s;
+    inv = 0;
     printf("Enter size of the array: ");
     scanf("%d", &s);
     int *arr = (int *) malloc(sizeof(int) * s);
@@ -78,5 +74,7 @@ int main ()
 
     printf("Array after sort: \n");
     mergeSort(arr, 0, s - 1);
+
+    printf("%d", inv);
     free(arr);
 }
